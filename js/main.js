@@ -19,9 +19,10 @@ console.log("loaded");
 
         //2. Return the budget
         let budget = budgetCtrl.getBudget();
-
+        console.log("from updateBudget");
+        console.dir(budget);
         //3. Display the buget on the UI
-        console.log(budget);
+        UICtrl.displayBudget(budget);
     };
 
     let ctrlAddItem = function(){
@@ -49,6 +50,12 @@ console.log("loaded");
 
     return {
         init: function(){
+            UICtrl.displayBudget({
+                budget: 0,
+                totalInc: 0,
+                totalExp: 0,
+                percentage: 0
+            });
             setupEventListeners();
         }
     }
